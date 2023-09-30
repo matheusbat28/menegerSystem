@@ -1,9 +1,9 @@
 from django.db import models
 
 class Countries(models.Model):
-    name = models.CharField(max_length=100)
-    uf = models.CharField(max_length=2)
-    gentle = models.CharField(max_length=100)
+    name = models.CharField(max_length=100, blank=False, null=False)
+    uf = models.CharField(max_length=4, blank=False, null=False)
+    gentle = models.CharField(max_length=100, blank=False, null=False)
     flag = models.ImageField(upload_to='flags', blank=True, null=True)
 
     def __str__(self):
